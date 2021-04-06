@@ -15,10 +15,10 @@ public class ZookeeperProperties {
     @Value("${datasource.provider.zookeeper.server-addr:localhost:2181}")
     private String serverAddr;
 
-    @Value("${datasource.provider.zookeeper.session-timeout:60000}")
+    @Value("${datasource.provider.zookeeper.session-timeout:600000}")
     private int sessionTimeout;
 
-    @Value("${datasource.provider.zookeeper.connection-timeout:15000}")
+    @Value("${datasource.provider.zookeeper.connection-timeout:150000}")
     private int connectionTimeout;
 
     @Value("${datasource.provider.zookeeper.retry.max-retries:3}")

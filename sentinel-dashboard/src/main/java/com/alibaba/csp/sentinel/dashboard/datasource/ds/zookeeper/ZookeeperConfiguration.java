@@ -39,8 +39,9 @@ public class ZookeeperConfiguration {
 
     @Bean
     public CuratorFramework zkClient() {
+        String url = zookeeperProperties.getServerAddr();
         ExponentialBackoffRetry exponentialBackoffRetry =  new ExponentialBackoffRetry(zookeeperProperties.getBaseSleepTime(), zookeeperProperties.getMaxRetries(), zookeeperProperties.getMaxSleepTime());
-        CuratorFramework zkClient = CuratorFrameworkFactory.newClient("localhhost:2181", exponentialBackoffRetry);
+        CuratorFramework zkClient = CuratorFrameworkFactory.newClient(url, exponentialBackoffRetry);
         zkClient.start();
         return zkClient;
     }
